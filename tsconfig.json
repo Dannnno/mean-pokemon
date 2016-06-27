@@ -8,7 +8,6 @@
     "experimentalDecorators": true,
     "removeComments": false,
     "noImplicitAny": true,
-    "outDir": "build/",
     "allowJs": true
   },
   "exclude": [
@@ -25,7 +24,9 @@
   },
   "files": [
     "app/components/app.ts",
+    "app/components/pokemon.ts",
     "app/main.ts",
+    "app/models/pokemon.ts",
     "typings/index.d.ts"
   ]
 }
