@@ -25,11 +25,12 @@
   },
   "files": [
     "app/components/app.ts",
-    "app/components/battle-options.ts",
     "app/components/pokemon.ts",
     "app/components/single-battle.ts",
     "app/config/connection-strings.ts",
     "app/main.ts",
+    "app/models/item.ts",
+    "app/models/move.ts",
     "app/models/pokemon.ts",
     "app/models/trainer.ts",
     "app/services/pokemon-loader.ts",

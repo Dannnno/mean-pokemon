@@ -101,39 +101,39 @@ export class SingleBattleComponent implements OnInit {
 
     private useMove(move: Move | any, target: Pokemon, user: Pokemon) {
       for (var effect in move.effects) {
-        var odds = calculateOdds(effect, ,user, target, this.battlefield);
-        
-        if (effect.targetsUser) {
-          effect.applyTo(user);
-          var odds = calculateOdds(effect, user, target,)
-        }
-        if (effect.targetsUser) {
-
-        }
-      }
-      var hit_odds: number = calculateHitOdds(move, user, target, this.battlefield);
-      var status_odds: number = calculateStatusOdds(move, user, target, this.battlefield);
-      var hits: number = Math.random();
-      var status: number = Math.random();
-      if (hits <= hit_odds) {
-        if (move.type === MoveTypes.Status) {
-          this.enemyMon.status = move.status_result;
-        } else if (move.type === MoveTypes.Healing) {
-          if (status <= status_odds) {
-            this.yourMon.status = move.status;
-          }
-          this.yourMon.currentHp += calculateAmountHealed(move, this.yourMon, this.enemyMon, this.battlefield);
-          this.yourMon.currentHp = Math.min(this.yourMon.maxHp, this.yourMon.currentHp);
-        } else if (move.type === MoveTypes.Damaging) {
-          this.enemyMon.currentHp -= calculateAmountDamaged(move, this.yourMon, this.enemyMon, this.battlefield);
-          this.enemyMon.currentHp = Math.max(0, this.enemyMon.currentHp);
-        } else if (move.type === MoveTypes.Recoil) {
-          var result = calculateRecoilMoveDamage(move, this.yourMon, this.enemyMon, this.battlefield);
-          this.enemyMon.currentHp -= result.damage;
-          this.enemyMon.currentHp = Math.max(0, this.enemyMon.currentHp);
-          this.yourMon.currentHp -= result.recoil;
-          this.enemyMon.currentHp = Math.max(0, this.yourMon.currentHp);
-        }
+      //   var odds = calculateOdds(effect, ,user, target, this.battlefield);
+      //
+      //   if (effect.targetsUser) {
+      //     effect.applyTo(user);
+      //     var odds = calculateOdds(effect, user, target,)
+      //   }
+      //   if (effect.targetsUser) {
+      //
+      //   }
+      // }
+      // var hit_odds: number = calculateHitOdds(move, user, target, this.battlefield);
+      // var status_odds: number = calculateStatusOdds(move, user, target, this.battlefield);
+      // var hits: number = Math.random();
+      // var status: number = Math.random();
+      // if (hits <= hit_odds) {
+      //   if (move.type === MoveTypes.Status) {
+      //     this.enemyMon.status = move.status_result;
+      //   } else if (move.type === MoveTypes.Healing) {
+      //     if (status <= status_odds) {
+      //       this.yourMon.status = move.status;
+      //     }
+      //     this.yourMon.currentHp += calculateAmountHealed(move, this.yourMon, this.enemyMon, this.battlefield);
+      //     this.yourMon.currentHp = Math.min(this.yourMon.maxHp, this.yourMon.currentHp);
+      //   } else if (move.type === MoveTypes.Damaging) {
+      //     this.enemyMon.currentHp -= calculateAmountDamaged(move, this.yourMon, this.enemyMon, this.battlefield);
+      //     this.enemyMon.currentHp = Math.max(0, this.enemyMon.currentHp);
+      //   } else if (move.type === MoveTypes.Recoil) {
+      //     var result = calculateRecoilMoveDamage(move, this.yourMon, this.enemyMon, this.battlefield);
+      //     this.enemyMon.currentHp -= result.damage;
+      //     this.enemyMon.currentHp = Math.max(0, this.enemyMon.currentHp);
+      //     this.yourMon.currentHp -= result.recoil;
+      //     this.enemyMon.currentHp = Math.max(0, this.yourMon.currentHp);
+      //   }
       }
     }
 
