@@ -8,14 +8,15 @@
     "experimentalDecorators": true,
     "removeComments": false,
     "noImplicitAny": true,
-    "allowJs": true
+    "allowJs": true,
+    "outDir": "build"
   },
   "exclude": [
     "node_modules"
   ],
   "filesGlob": [
-    "app/**/*.ts",
-    "typings/index.d.ts"
+    "!node_modules",
+    "app/**/*.ts"
   ],
   "compileOnSave": true,
   "buildOnSave": false,
@@ -24,9 +25,14 @@
   },
   "files": [
     "app/components/app.ts",
+    "app/components/battle-options.ts",
     "app/components/pokemon.ts",
+    "app/components/single-battle.ts",
+    "app/config/connection-strings.ts",
     "app/main.ts",
     "app/models/pokemon.ts",
-    "typings/index.d.ts"
+    "app/models/trainer.ts",
+    "app/services/pokemon-loader.ts",
+    "app/services/trainer-loader.ts"
   ]
 }

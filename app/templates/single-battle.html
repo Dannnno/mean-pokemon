@@ -1,0 +1,45 @@
+<div>
+    <div class="battlefield">
+      <div style="position:absolute; top:5%; right: 5%;">
+          <label>{{enemyTrainer.name}}'s {{enemyMon.name}}</label><br/>
+          <pokemon [name=enemyMon.name, imageUrl=enemyMon.frontImageUrl]></pokemon>
+      </div>
+      <div style="position:absolute; bottom: 5%; left: 5%;">
+          <label>{{you.name}}'s {{yourMon.name}}</label><br/>
+          <pokemon [name=yourMon.name, imageUrl=yourMon.backImageUrl]></pokemon>
+      </div>
+    </div>
+    <div class="battle-options">
+      <div class="battle-buttons" *ngIf="switches.showButtons">
+        <div class="battle-button" (click)="attackButtonClicked()">Attack</div>
+        <div class="battle-button" (click)="pokemonButtonClicked()">Pokemon</div>
+        <div class="battle-button" (click)="bagButtonClicked()">Bag</div>
+        <div class="battle-button" (click)="runButtonClicked()">Run</div>
+      </div>
+      <div class="move-buttons" *ngIf="switches.showMoves">
+        <div class="battle-buttons" *ngFor="move in yourMon.moves">
+          <label>{{move.currrentPP}}/{{move.maxPP}}</label><br/>
+          <button class="battle-button move-button" (click)="useMove(move, yourMon, enemyMon)" (hover)="showMoveInformation(move)">{{move.name}}</button>
+        </div>
+        <div class="move-description" *ngIf="switches.showMoveInformation">{{currentMove.details}}</div>
+      </div>
+      <div class="pokemon-options" *ngIf="switches.showPokemonOptions">
+        <div class="pokemon-battle-listings" *ngFor="pokemon in you.party">
+          <div class="pokemon-battle-listing" (click)="switchPokemon(pokemon)">
+            <label>Name: {{pokemon.name}}</label>
+            <span>Lv:{{pokemon.level}}</span>
+            <span>Hp:{{pokemon.currentHp}}/{{pokemon.maxHp}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="bag-options" *ngIf="switches.showBag">
+        <div class="bag-listings" *ngFor="item in you.bag">
+          <div class="bag-listing" (click)="useItem(item)">
+            <label>Name: {{item.name}}</label>
+            <span>Number:{{item.count}}</span><br/>
+            <p>{{item.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
